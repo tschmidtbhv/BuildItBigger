@@ -20,3 +20,24 @@ allprojects {
         google()
     }
 }
+
+task startServer{
+    dependsOn 'backend:appengineStart'
+}
+
+task stopServer{
+    mustRunAfter 'testFree'
+    dependsOn 'backend:appengineStop'
+}
+
+task testFree{
+    mustRunAfter(startServer)
+    dependsOn 'app:connectedPaidDebugAndroidTest'
+}
+
+task startWork{
+    description 'Start the GCE Server, tests and stop the server'
+    dependsOn(startServer)
+    dependsOn(testFree)
+    dependsOn(stopServer)
+}
