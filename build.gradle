@@ -37,7 +37,7 @@ task testFree{
 
 task startWork{
     description 'Start the GCE Server, tests and stop the server'
-    dependsOn(startServer)
-    dependsOn(testFree)
-    dependsOn(stopServer)
+    dependsOn 'startServer'
+    dependsOn 'testFree'
+    dependsOn 'stopServer'
 }
