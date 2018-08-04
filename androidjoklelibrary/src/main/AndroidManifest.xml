@@ -1,2 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="de.naturalsoft.androidjoklelibrary" />
+    package="de.naturalsoft.androidjoklelibrary">
+
+    <application
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+
+        <activity android:name=".AndroidJokeActivity" />
+    </application>
+</manifest>
